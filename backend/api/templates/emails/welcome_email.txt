@@ -1,0 +1,36 @@
+¡BIENVENIDO A THE LANGUAGE! 🦩
+
+Hola {{ user_name }},
+
+¡Nos alegra muchísimo tenerte con nosotros! Tu cuenta ha sido creada exitosamente con el rol de {{ user_role }}.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 TUS CREDENCIALES DE ACCESO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Correo Personal (Login): {{ user_email }}
+Contraseña Temporal: {{ user_password }}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ IMPORTANTE: Por tu seguridad, te recomendamos cambiar tu contraseña después de iniciar sesión por primera vez.
+
+🚀 PRÓXIMOS PASOS:
+
+1. Accede a: {{ login_url }}
+2. Inicia sesión con tu correo personal y contraseña temporal
+3. Completa tu perfil con tu información personal
+4. Cambia tu contraseña desde la configuración de tu perfil
+
+Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos. Estamos aquí para apoyarte en tu proceso de aprendizaje.
+
+¡Que tengas un excelente día! 🌟
+
+Saludos cordiales,
+El equipo de La Lengua
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+La Lengua - Tu camino hacia el dominio del inglés
+Este es un correo automático, por favor no respondas a este mensaje.
+© 2025 La Lengua. Todos los derechos reservados.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

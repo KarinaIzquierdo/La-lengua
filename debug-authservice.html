@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug AuthService</title>
+</head>
+<body>
+    <h2>Debug AuthService</h2>
+    <div id="result"></div>
+
+    <script type="module">
+        // Simular authService directamente
+        const API_BASE_URL = 'https://lalenguacolombia.co/api/index.php';
+        
+        const authService = {
+            getToken() {
+                return localStorage.getItem('authToken');
+            },
+            
+            async getUserProfile() {
+                const token = this.getToken();
+                if (!token) {
+                    throw new Error('No token found');
+                }
+
+                const response = await fetch(`${API_BASE_URL}/auth/profile`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to get user profile');
+                }
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    return data.user;
+                } else {
+                    throw new Error(data.message || 'Failed to get user profile');
+                }
+            },
+
+            async login(credentials) {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/auth/login`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(credentials),
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        if (data.token) {
+                            localStorage.setItem('authToken', data.token);
+                            localStorage.setItem('token', data.token);
+                            localStorage.setItem('user', JSON.stringify(data.user));
+                        }
+                        return { success: true, ...data };
+                    } else {
+                        return { success: false, message: data.message || 'Email o contraseña incorrectos' };
+                    }
+                } catch (error) {
+                    console.error('Error en login:', error);
+                    return { success: false, message: 'Error de conexión' };
+                }
+            }
+        };
+
+        // Test completo
+        async function testCompleteFlow() {
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                console.log('=== TESTING COMPLETE FLOW ===');
+                
+                // 1. Test login
+                console.log('1. Testing login...');
+                const loginResult = await authService.login({
+                    email: 'adminprueba@gmail.com',
+                    password: 'Admin123'
+                });
+                
+                console.log('Login result:', loginResult);
+                
+                if (loginResult.success) {
+                    resultDiv.innerHTML = `
+                        <div style="background: #d4edda; color: #155724; padding: 10px; margin: 10px 0; border-radius: 4px;">
+                            ✅ <strong>Login Exitoso!</strong><br>
+                            Usuario: ${loginResult.user.username}<br>
+                            Role: ${loginResult.user.role}
+                        </div>
+                    `;
+                    
+                    // 2. Test getUserProfile
+                    console.log('2. Testing getUserProfile...');
+                    const profile = await authService.getUserProfile();
+                    console.log('Profile result:', profile);
+                    
+                    resultDiv.innerHTML += `
+                        <div style="background: #d4edda; color: #155724; padding: 10px; margin: 10px 0; border-radius: 4px;">
+                            ✅ <strong>getUserProfile Exitoso!</strong><br>
+                            Nombre: ${profile.first_name} ${profile.last_name}<br>
+                            Email: ${profile.email}<br>
+                            Role: ${profile.role}
+                        </div>
+                    `;
+                    
+                    // 3. Test function existence
+                    console.log('3. Testing function existence...');
+                    console.log('typeof authService:', typeof authService);
+                    console.log('typeof authService.getUserProfile:', typeof authService.getUserProfile);
+                    console.log('authService.getUserProfile:', authService.getUserProfile);
+                    
+                    resultDiv.innerHTML += `
+                        <div style="background: #cce5ff; color: #004085; padding: 10px; margin: 10px 0; border-radius: 4px;">
+                            📋 <strong>Function Check:</strong><br>
+                            typeof authService: ${typeof authService}<br>
+                            typeof getUserProfile: ${typeof authService.getUserProfile}<br>
+                            Function exists: ${authService.getUserProfile ? 'YES' : 'NO'}
+                        </div>
+                    `;
+                    
+                } else {
+                    resultDiv.innerHTML = `
+                        <div style="background: #f8d7da; color: #721c24; padding: 10px; margin: 10px 0; border-radius: 4px;">
+                            ❌ <strong>Login Failed:</strong> ${loginResult.message}
+                        </div>
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('Error in test:', error);
+                resultDiv.innerHTML += `
+                    <div style="background: #f8d7da; color: #721c24; padding: 10px; margin: 10px 0; border-radius: 4px;">
+                        ❌ <strong>Error:</strong> ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        // Ejecutar test al cargar
+        testCompleteFlow();
+    </script>
+</body>
+</html>

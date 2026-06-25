@@ -1,0 +1,267 @@
+/* Header para página Home */
+.header-home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.logo-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    opacity: 1 !important;
+}
+
+.logo-brand:hover {
+    transform: scale(1.05);
+}
+
+.logo-image {
+    width: 45px;
+    height: auto;
+    display: block;
+    opacity: 1 !important;
+}
+
+.header-home .logo .logo-brand .logo-text {
+    font-size: 1.1rem !important;
+    font-weight: 900 !important;
+    color: #5a67d8 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #5a67d8 !important;
+    background-clip: unset !important;
+}
+
+/* Navegación */
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav a,
+.nav a:link,
+.nav a:visited {
+    color: #333 !important;
+    text-decoration: none;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.025em;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    white-space: nowrap;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+    overflow: hidden;
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.nav a:hover::before {
+    left: 100%;
+}
+
+.nav a:hover,
+.nav a:link:hover,
+.nav a:visited:hover {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px) scale(1.02) rotateX(5deg);
+    animation: pulse 0.6s ease-out;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1); }
+    50% { box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6), 0 4px 8px rgba(0, 0, 0, 0.15); }
+    100% { box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1); }
+}
+
+.nav a.active,
+.nav a.active:link,
+.nav a.active:visited {
+    color: #333 !important;
+    background: transparent;
+    font-weight: 600;
+}
+
+.nav a.active:hover,
+.nav a.active:link:hover,
+.nav a.active:visited:hover {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Login Button */
+.login-btn, .profesor-login-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.025em;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    cursor: pointer;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+
+.profesor-login-btn {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn .btn-text,
+.login-btn .btn-hover,
+.profesor-login-btn .btn-text,
+.profesor-login-btn .btn-hover {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.login-btn .btn-hover,
+.profesor-login-btn .btn-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(100%);
+    opacity: 0;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5), 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.profesor-login-btn:hover {
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5), 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.login-btn:hover .btn-text,
+.profesor-login-btn:hover .btn-text {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.login-btn:hover .btn-hover,
+.profesor-login-btn:hover .btn-hover {
+    transform: translate(-50%, -50%) translateY(0);
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-home {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        row-gap: 0.5rem;
+    }
+    
+    .logo-image {
+        width: 40px;
+    }
+    
+    .logo-text {
+        font-size: 0.85rem;
+    }
+    
+    .nav {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .nav a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-home {
+        padding: 0.8rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 0.5rem;
+    }
+    
+    .logo-image {
+        width: 35px;
+    }
+    
+    .logo-text {
+        font-size: 0.75rem;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .nav a {
+        display: none;
+    }
+}

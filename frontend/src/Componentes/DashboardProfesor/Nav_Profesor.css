@@ -1,0 +1,197 @@
+/* Sidebar del Profesor - Fijo */
+.sidebar-profesor {
+  flex-shrink: 0;
+  width: 250px;
+  background-color: var(--bg-card, #ffffff);
+  color: var(--text-primary, #1e293b);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.sidebar-header h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary, #1e293b);
+}
+
+.profesor-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--bg-secondary, #f1f5f9);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.profesor-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.profesor-details {
+  text-align: center;
+}
+
+.profesor-name {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary, #1e293b);
+  margin-bottom: 0.25rem;
+}
+
+.profesor-role {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary, #64748b);
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav li button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary, #64748b);
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.sidebar-nav li button:hover {
+  background-color: var(--bg-secondary, #f1f5f9);
+  color: var(--text-primary, #1e293b);
+}
+
+.sidebar-nav li button.active {
+  background-color: var(--primary-blue, #2563eb);
+  color: var(--white, #ffffff);
+  font-weight: 600;
+}
+
+.nav-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.nav-label {
+  flex-grow: 1;
+}
+
+.logout-button {
+  background-color: var(--danger, #ef4444);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: var(--danger-light, #f87171);
+}
+
+/* Variables CSS para compatibilidad */
+:root {
+  --bg-card: #ffffff;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --primary-blue: #2563eb;
+  --white: #ffffff;
+  --danger: #ef4444;
+  --danger-light: #f87171;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar-profesor {
+    width: 100%;
+    min-height: auto;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+  
+  .sidebar-profesor.mobile-open {
+    left: 0;
+  }
+}
+
+/* Badge para notificaciones */
+.nav-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.4rem;
+  border-radius: 10px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.sidebar-nav li {
+  position: relative;
+}

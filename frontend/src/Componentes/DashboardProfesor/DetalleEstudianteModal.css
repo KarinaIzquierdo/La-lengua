@@ -1,0 +1,694 @@
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.detalle-modal {
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header del modal */
+.modal-header {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.estudiante-info-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex: 1;
+}
+
+.avatar-section {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-blue), #60a5fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.info-basica h2 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.nivel-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.nivel-badge.básico {
+  background: rgba(34, 197, 94, 0.2);
+  color: #16a34a;
+}
+
+.nivel-badge.intermedio {
+  background: rgba(59, 130, 246, 0.2);
+  color: #2563eb;
+}
+
+.nivel-badge.avanzado {
+  background: rgba(168, 85, 247, 0.2);
+  color: #7c3aed;
+}
+
+.email {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.stats-rapidas {
+  display: flex;
+  gap: 2rem;
+}
+
+.stats-rapidas .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stats-rapidas .stat-numero {
+  color: var(--primary-blue);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stats-rapidas .stat-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+}
+
+/* Tabs */
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  color: var(--primary-blue);
+  background: var(--bg-card);
+  border-bottom-color: var(--primary-blue);
+}
+
+/* Contenido del modal */
+.modal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.info-section {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.info-section h3 {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Progreso detallado */
+.progreso-detallado {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.progreso-barra-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.progreso-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.barra-fondo {
+  height: 12px;
+  background: var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.barra-relleno {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-blue), #60a5fa);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.clases-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.clases-completadas,
+.clases-restantes {
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.clases-completadas .numero,
+.clases-restantes .numero {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.clases-completadas .label,
+.clases-restantes .label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* Rendimiento circular */
+.rendimiento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.rendimiento-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rendimiento-circular {
+  width: 80px;
+  height: 80px;
+}
+
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+  stroke: var(--primary-blue);
+}
+
+.percentage {
+  fill: var(--text-primary);
+  font-family: sans-serif;
+  font-size: 0.4em;
+  text-anchor: middle;
+  font-weight: 600;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.rendimiento-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Tags */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.tag.fortaleza {
+  background: rgba(34, 197, 94, 0.2);
+  color: #16a34a;
+}
+
+.tag.area-mejorar {
+  background: rgba(245, 158, 11, 0.2);
+  color: #d97706;
+}
+
+/* Tablas */
+.examenes-tabla,
+.asistencia-tabla {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.tabla-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--primary-blue);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.asistencia-tabla .tabla-header {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tabla-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.asistencia-tabla .tabla-fila {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tabla-fila:last-child {
+  border-bottom: none;
+}
+
+.tabla-fila:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.nota {
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.estado {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.estado.excelente {
+  background: rgba(34, 197, 94, 0.2);
+  color: #16a34a;
+}
+
+.estado.bueno {
+  background: rgba(59, 130, 246, 0.2);
+  color: #2563eb;
+}
+
+.estado.regular {
+  background: rgba(245, 158, 11, 0.2);
+  color: #d97706;
+}
+
+.estado.presente {
+  background: rgba(34, 197, 94, 0.2);
+  color: #16a34a;
+}
+
+.estado.ausente {
+  background: rgba(239, 68, 68, 0.2);
+  color: #dc2626;
+}
+
+/* Notas del profesor */
+.notas-profesor-section {
+  margin-top: 2rem;
+}
+
+.nota-item {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.nota-fecha {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.nota-contenido {
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Asistencia stats */
+.asistencia-stats,
+.retos-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-card .stat-numero {
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-card .stat-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Progreso retos */
+.progreso-retos {
+  margin-bottom: 2rem;
+}
+
+.reto-progreso {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.reto-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Logros */
+.logros-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logro-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.logro-icon {
+  font-size: 1.5rem;
+}
+
+.logro-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.logro-titulo {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.logro-fecha {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* Footer del modal */
+.modal-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-generar-reporte {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-generar-reporte:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.btn-cerrar {
+  background: var(--border-color);
+  color: var(--text-primary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cerrar:hover {
+  background: var(--text-secondary);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 0.5rem;
+  }
+  
+  .detalle-modal {
+    max-height: 95vh;
+  }
+  
+  .modal-header {
+    padding: 1.5rem;
+  }
+  
+  .estudiante-info-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .avatar-section {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .stats-rapidas {
+    gap: 1rem;
+  }
+  
+  .modal-tabs {
+    overflow-x: auto;
+  }
+  
+  .tab-btn {
+    white-space: nowrap;
+    min-width: 120px;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .rendimiento-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .tabla-header,
+  .tabla-fila {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+  
+  .asistencia-stats,
+  .retos-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-footer {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+  }
+  
+  .btn-generar-reporte,
+  .btn-cerrar {
+    width: 100%;
+    justify-content: center;
+  }
+}

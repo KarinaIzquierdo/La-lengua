@@ -1,0 +1,146 @@
+.adventure-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1800;
+  backdrop-filter: blur(6px);
+}
+
+.adventure-modal {
+  position: relative;
+  width: 90%;
+  max-width: 960px;
+  background: radial-gradient(circle at top left, #4f46e5 0%, #1f2937 40%, #020617 100%);
+  border-radius: 24px;
+  padding: 20px 20px 24px;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.8);
+  color: #e5e7eb;
+  overflow: hidden;
+}
+
+.adventure-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.7);
+  color: #e5e7eb;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.adventure-close-btn:hover {
+  background: rgba(15, 23, 42, 0.95);
+  transform: translateY(-1px);
+}
+
+.adventure-image-wrapper {
+  background: radial-gradient(circle at center, rgba(148, 163, 184, 0.35), transparent 60%);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 8px;
+}
+
+.adventure-image {
+  display: block;
+  width: 100%;
+  max-height: min(70vh, 520px);
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #020617;
+}
+
+.adventure-controls {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.adventure-secondary-btn,
+.adventure-primary-btn {
+  border-radius: 9999px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.adventure-secondary-btn {
+  background: transparent;
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+}
+
+.adventure-secondary-btn:hover {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.adventure-primary-btn {
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 40%, #ef4444 100%);
+  color: #111827;
+  box-shadow: 0 6px 20px rgba(248, 250, 252, 0.25);
+}
+
+.adventure-primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(248, 250, 252, 0.35);
+}
+
+.adventure-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.adventure-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  border: none;
+  background: rgba(148, 163, 184, 0.6);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.adventure-dot.active {
+  width: 22px;
+  background: #fbbf24;
+}
+
+@media (max-width: 768px) {
+  .adventure-modal {
+    padding: 16px 12px 20px;
+  }
+
+  .adventure-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .adventure-secondary-btn,
+  .adventure-primary-btn {
+    width: 100%;
+  }
+}

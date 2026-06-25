@@ -1,0 +1,786 @@
+.gestion-suscripciones-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.page-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.page-header p {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.btn-asignar-principal {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-asignar-principal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.loading-state, .error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f4f6;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.retry-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.retry-button:hover {
+  background-color: #2563eb;
+}
+
+/* Estadísticas */
+.stats-section {
+  margin-bottom: 30px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-card.warning {
+  border-left-color: #f59e0b;
+}
+
+.stat-card.danger {
+  border-left-color: #ef4444;
+}
+
+.stat-card.success {
+  border-left-color: #10b981;
+}
+
+.stat-icon {
+  font-size: 2rem;
+}
+
+.stat-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: #1f2937;
+}
+
+.stat-content p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Secciones */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.section-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.count {
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 2px dashed #d1d5db;
+}
+
+/* Usuarios sin plan */
+.usuarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.usuario-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.usuario-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.usuario-info p {
+  margin: 0 0 8px 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.fecha-registro {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.btn-asignar {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.btn-asignar:hover {
+  background-color: #2563eb;
+}
+
+/* Tablas */
+.planes-vencer-table, .suscripciones-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.planes-vencer-table table, .suscripciones-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.planes-vencer-table th, .suscripciones-table th {
+  background-color: #f9fafb;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.planes-vencer-table td, .suscripciones-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.planes-vencer-table tr.urgente {
+  background-color: #fef2f2;
+}
+
+.planes-vencer-table tr.warning {
+  background-color: #fffbeb;
+}
+
+.usuario-cell strong {
+  color: #1f2937;
+}
+
+.dias-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.dias-badge.critico {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.dias-badge.warning {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.acciones-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-recordatorio, .btn-renovar {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.btn-recordatorio {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.btn-recordatorio:hover {
+  background-color: #d97706;
+}
+
+.btn-renovar {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn-renovar:hover {
+  background-color: #059669;
+}
+
+.estado-activo {
+  background-color: #d1fae5;
+  color: #065f46;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.close-button:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-cancel {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-cancel:hover {
+  background-color: #e5e7eb;
+}
+
+.btn-confirm {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-confirm:hover {
+  background-color: #2563eb;
+}
+
+.btn-confirm:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .gestion-suscripciones-container {
+    padding: 16px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .usuarios-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .usuario-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .acciones-cell {
+    flex-direction: column;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+}
+
+/* Modal Estudiantes */
+.modal-estudiantes {
+  max-width: 600px;
+  max-height: 80vh;
+}
+
+.estudiantes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.estudiante-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.estudiante-item:hover {
+  background: #f3f4f6;
+  border-color: #3b82f6;
+  transform: translateX(4px);
+}
+
+.estudiante-item .estudiante-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.estudiante-item .estudiante-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.btn-select {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-select:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Botón Volver */
+.btn-volver {
+  background: #6b7280;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  background: #4b5563;
+  transform: translateX(-2px);
+}
+
+/* Tabla de Estudiantes */
+.tabla-estudiantes-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-estudiantes {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-estudiantes thead {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+}
+
+.tabla-estudiantes th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tabla-estudiantes tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.3s ease;
+}
+
+.tabla-estudiantes tbody tr:hover {
+  background: #f9fafb;
+  transform: scale(1.01);
+}
+
+.tabla-estudiantes td {
+  padding: 16px;
+  color: #4b5563;
+}
+
+.estudiante-nombre {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.btn-seleccionar-estudiante {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-seleccionar-estudiante:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Formulario Asignar Plan */
+.formulario-asignar-plan {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-select,
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-select:focus,
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.btn-cancelar,
+.btn-confirmar {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancelar {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.btn-cancelar:hover {
+  background: #d1d5db;
+}
+
+.btn-confirmar {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-confirmar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-confirmar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== BOTÓN CANCELAR PLAN ===== */
+
+.btn-cancelar-plan {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.btn-cancelar-plan:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.btn-cancelar-plan:active {
+  transform: translateY(0);
+}
+
+/* ===== BADGES DE ESTADO ===== */
+
+.estado-badge {
+  padding: 0.375rem 0.875rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.estado-activo {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.estado-por-vencer {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.estado-cancelado {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.estado-vencido {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(107, 114, 128, 0.3);
+}

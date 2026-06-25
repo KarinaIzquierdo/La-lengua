@@ -1,0 +1,254 @@
+/* Estilos para el contenedor del formulario */
+.form-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  /* Permitir desplazamiento vertical cuando el contenido es largo */
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  /* Limitar altura para que quepa en la ventana y se pueda hacer scroll */
+  max-height: calc(100vh - 160px);
+  min-height: auto;
+  padding: 1rem;
+}
+
+.form-container form {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container .form-group {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.form-container input,
+.form-container select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container .form-select {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-container .form-select:hover {
+  border-color: #9ca3af;
+}
+
+.form-container .form-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-container .button-group {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 2rem;
+  justify-content: center;
+  /* Mantener visibles los botones aunque el usuario haga scroll */
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #ffffff 40%);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.form-container .button-group button {
+  flex: 1;
+  max-width: 200px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-container .form-submit-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+.form-container .form-submit-btn:hover {
+  background: #0056b3;
+}
+
+.form-container .form-cancel-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+}
+
+.form-container .form-cancel-btn:hover {
+  background: #545b62;
+}
+
+/* Estilos para la lista de estudiantes mejorada */
+.estudiantes-container {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.loading-message, .empty-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px 20px;
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.estudiantes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.estudiante-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+
+.estudiante-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  transform: translateY(-1px);
+}
+
+.estudiante-card.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.estudiante-checkbox {
+  margin-top: 2px;
+}
+
+.estudiante-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+  cursor: pointer;
+}
+
+.estudiante-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.estudiante-nombre {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+.estudiante-bloque {
+  font-size: 12px;
+  font-weight: 500;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.estudiante-email {
+  font-size: 11px;
+  color: #6b7280;
+  font-family: 'Courier New', monospace;
+  margin-top: 2px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .estudiantes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .estudiante-card {
+    padding: 12px;
+  }
+  
+  .estudiante-nombre {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .estudiantes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Scrollbar personalizado */
+.estudiantes-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.estudiantes-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.estudiantes-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.estudiantes-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -1,0 +1,8 @@
+{
+  "cSpell.enabled": false,
+  "cSpell.showStatus": false,
+  "cSpell.diagnosticLevel": "Hint",
+  "cSpell.checkLimit": 0,
+  "python.linting.enabled": false,
+  "python.analysis.diagnosticMode": "off"
+}

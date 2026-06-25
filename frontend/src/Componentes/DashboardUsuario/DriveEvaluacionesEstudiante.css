@@ -1,0 +1,145 @@
+.drive-evaluaciones-estudiante {
+  margin: 2rem 0;
+}
+
+.drive-header-estudiante {
+  margin-bottom: 1.5rem;
+}
+
+.drive-header-estudiante h2 {
+  color: #2d3748;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.drive-header-estudiante p {
+  color: #718096;
+  font-size: 1rem;
+}
+
+.drive-card-estudiante {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.drive-card-estudiante:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.drive-icon-estudiante {
+  flex-shrink: 0;
+}
+
+.drive-icon-estudiante svg {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+.drive-content-estudiante {
+  flex: 1;
+}
+
+.drive-content-estudiante h3 {
+  color: #2d3748;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.drive-content-estudiante > p {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.drive-features-estudiante {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item-estudiante {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.feature-item-estudiante:hover {
+  background: #edf2f7;
+  transform: translateX(3px);
+}
+
+.feature-icon-estudiante {
+  font-size: 1.2rem;
+}
+
+.feature-item-estudiante span:last-child {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.btn-open-drive-estudiante {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc04 75%, #ea4335 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+
+.btn-open-drive-estudiante:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+}
+
+.btn-open-drive-estudiante svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .drive-card-estudiante {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .drive-icon-estudiante svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .drive-features-estudiante {
+    grid-template-columns: 1fr;
+  }
+
+  .drive-header-estudiante h2 {
+    font-size: 1.5rem;
+  }
+
+  .drive-content-estudiante h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,1195 @@
+[
+{
+  "model": "api.bloque",
+  "pk": 1,
+  "fields": {
+    "nombre": "Mañana",
+    "nivel": "A1",
+    "estado": "configurado",
+    "grupo_color": "#4CAF50",
+    "horario_inicio": "08:00:00",
+    "horario_fin": "10:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.953Z",
+    "updated_at": "2025-10-17T13:32:51.953Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 2,
+  "fields": {
+    "nombre": "Tarde",
+    "nivel": "A1",
+    "estado": "configurado",
+    "grupo_color": "#2196F3",
+    "horario_inicio": "14:00:00",
+    "horario_fin": "16:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.958Z",
+    "updated_at": "2025-10-17T13:32:51.958Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 3,
+  "fields": {
+    "nombre": "Noche",
+    "nivel": "A1",
+    "estado": "configurado",
+    "grupo_color": "#9C27B0",
+    "horario_inicio": "18:00:00",
+    "horario_fin": "20:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.960Z",
+    "updated_at": "2025-10-17T13:32:51.960Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 4,
+  "fields": {
+    "nombre": "Mañana",
+    "nivel": "A2",
+    "estado": "configurado",
+    "grupo_color": "#4CAF50",
+    "horario_inicio": "08:00:00",
+    "horario_fin": "10:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.962Z",
+    "updated_at": "2025-10-17T13:32:51.962Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 5,
+  "fields": {
+    "nombre": "Tarde",
+    "nivel": "A2",
+    "estado": "configurado",
+    "grupo_color": "#2196F3",
+    "horario_inicio": "14:00:00",
+    "horario_fin": "16:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.963Z",
+    "updated_at": "2025-10-17T13:32:51.963Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 6,
+  "fields": {
+    "nombre": "Noche",
+    "nivel": "A2",
+    "estado": "configurado",
+    "grupo_color": "#9C27B0",
+    "horario_inicio": "18:00:00",
+    "horario_fin": "20:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.964Z",
+    "updated_at": "2025-10-17T13:32:51.964Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 7,
+  "fields": {
+    "nombre": "Mañana",
+    "nivel": "B1",
+    "estado": "configurado",
+    "grupo_color": "#4CAF50",
+    "horario_inicio": "08:00:00",
+    "horario_fin": "10:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.966Z",
+    "updated_at": "2025-10-17T13:32:51.966Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 8,
+  "fields": {
+    "nombre": "Tarde",
+    "nivel": "B1",
+    "estado": "configurado",
+    "grupo_color": "#2196F3",
+    "horario_inicio": "14:00:00",
+    "horario_fin": "16:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.970Z",
+    "updated_at": "2025-10-17T13:32:51.970Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 9,
+  "fields": {
+    "nombre": "Noche",
+    "nivel": "B1",
+    "estado": "configurado",
+    "grupo_color": "#9C27B0",
+    "horario_inicio": "18:00:00",
+    "horario_fin": "20:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.973Z",
+    "updated_at": "2025-10-17T13:32:51.973Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 10,
+  "fields": {
+    "nombre": "Mañana",
+    "nivel": "B2",
+    "estado": "configurado",
+    "grupo_color": "#4CAF50",
+    "horario_inicio": "08:00:00",
+    "horario_fin": "10:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.974Z",
+    "updated_at": "2025-10-17T13:32:51.974Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 11,
+  "fields": {
+    "nombre": "Tarde",
+    "nivel": "B2",
+    "estado": "configurado",
+    "grupo_color": "#2196F3",
+    "horario_inicio": "14:00:00",
+    "horario_fin": "16:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.976Z",
+    "updated_at": "2025-10-17T13:32:51.976Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 12,
+  "fields": {
+    "nombre": "Noche",
+    "nivel": "B2",
+    "estado": "configurado",
+    "grupo_color": "#9C27B0",
+    "horario_inicio": "18:00:00",
+    "horario_fin": "20:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.977Z",
+    "updated_at": "2025-10-17T13:32:51.977Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 13,
+  "fields": {
+    "nombre": "Mañana",
+    "nivel": "C1",
+    "estado": "configurado",
+    "grupo_color": "#4CAF50",
+    "horario_inicio": "08:00:00",
+    "horario_fin": "10:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.980Z",
+    "updated_at": "2025-10-17T13:32:51.980Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 14,
+  "fields": {
+    "nombre": "Tarde",
+    "nivel": "C1",
+    "estado": "configurado",
+    "grupo_color": "#2196F3",
+    "horario_inicio": "14:00:00",
+    "horario_fin": "16:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.983Z",
+    "updated_at": "2025-10-17T13:32:51.983Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 15,
+  "fields": {
+    "nombre": "Noche",
+    "nivel": "C1",
+    "estado": "configurado",
+    "grupo_color": "#9C27B0",
+    "horario_inicio": "18:00:00",
+    "horario_fin": "20:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.985Z",
+    "updated_at": "2025-10-17T13:32:51.985Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 16,
+  "fields": {
+    "nombre": "Mañana",
+    "nivel": "C2",
+    "estado": "configurado",
+    "grupo_color": "#4CAF50",
+    "horario_inicio": "08:00:00",
+    "horario_fin": "10:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.988Z",
+    "updated_at": "2025-10-17T13:32:51.988Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 17,
+  "fields": {
+    "nombre": "Tarde",
+    "nivel": "C2",
+    "estado": "configurado",
+    "grupo_color": "#2196F3",
+    "horario_inicio": "14:00:00",
+    "horario_fin": "16:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:51.997Z",
+    "updated_at": "2025-10-17T13:32:51.997Z"
+  }
+},
+{
+  "model": "api.bloque",
+  "pk": 18,
+  "fields": {
+    "nombre": "Noche",
+    "nivel": "C2",
+    "estado": "configurado",
+    "grupo_color": "#9C27B0",
+    "horario_inicio": "18:00:00",
+    "horario_fin": "20:00:00",
+    "cupo_maximo": 20,
+    "activo": true,
+    "created_at": "2025-10-17T13:32:52.001Z",
+    "updated_at": "2025-10-17T13:32:52.002Z"
+  }
+},
+{
+  "model": "api.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$29C73U6RhmHXTgGUpKkQ2q$9Cy2h6BgkZGI9b/l9N+0Hq2axp0BHoSDYaAu0jMuQL0=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "adminprueba@gmail.com",
+    "is_staff": true,
+    "date_joined": "2025-10-29T15:12:17.034Z",
+    "email": "adminprueba@thelanguage.co",
+    "first_name": "Admin",
+    "last_name": "Prueba",
+    "phone": null,
+    "country": null,
+    "city": null,
+    "level": null,
+    "birth_date": null,
+    "cedula": null,
+    "address": null,
+    "emergency_contact": null,
+    "emergency_phone": null,
+    "english_level": null,
+    "learning_goals": null,
+    "profile_completed": false,
+    "is_profesor": false,
+    "role": "admin",
+    "bloque_asignado": null,
+    "especializacion": null,
+    "correo_personal": "adminprueba@gmail.com",
+    "created_at": "2025-10-29T15:12:17.034Z",
+    "updated_at": "2025-10-29T15:12:17.183Z",
+    "is_active": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "api.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$KQSp2Bku0HWnycdmEL3Ras$srtVQ0CHT/cTIbQktZ7qcYgXD11wOKXclwuy7+ux9HQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "profesorprueba@gmail.com",
+    "is_staff": false,
+    "date_joined": "2025-10-29T15:12:17.187Z",
+    "email": "profesorprueba@thelanguage.co",
+    "first_name": "Carlos",
+    "last_name": "Martínez",
+    "phone": null,
+    "country": null,
+    "city": null,
+    "level": null,
+    "birth_date": null,
+    "cedula": null,
+    "address": null,
+    "emergency_contact": null,
+    "emergency_phone": null,
+    "english_level": null,
+    "learning_goals": null,
+    "profile_completed": false,
+    "is_profesor": true,
+    "role": "profesor",
+    "bloque_asignado": null,
+    "especializacion": null,
+    "correo_personal": "profesorprueba@gmail.com",
+    "created_at": "2025-10-29T15:12:17.187Z",
+    "updated_at": "2025-10-29T15:12:17.337Z",
+    "is_active": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "api.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$HP1GQHEVAsTb3tzpGz4JCk$nhMYxLzP5Hc9W32xYEveXFaAmASP04PPKN9SVg3gB8Y=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kimberly19323@gmail.com",
+    "is_staff": false,
+    "date_joined": "2025-10-29T16:20:31.425Z",
+    "email": "kimberly19323@thelanguage.co",
+    "first_name": "kimberly",
+    "last_name": "florez",
+    "phone": null,
+    "country": null,
+    "city": null,
+    "level": null,
+    "birth_date": null,
+    "cedula": null,
+    "address": null,
+    "emergency_contact": null,
+    "emergency_phone": null,
+    "english_level": "A1",
+    "learning_goals": null,
+    "profile_completed": false,
+    "is_profesor": false,
+    "role": "student",
+    "bloque_asignado": "C2_Mañana",
+    "especializacion": 1,
+    "correo_personal": "kimberly19323@gmail.com",
+    "created_at": "2025-10-29T16:20:31.602Z",
+    "updated_at": "2025-11-06T14:22:29.025Z",
+    "is_active": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "api.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$7r6prphjNC4uMftFU8V5gt$e8c7QSnM8q9LNrKyuVMVU7P0vWh0+ztq9w6C3b/BtEo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "isecaicare@gmail.com",
+    "is_staff": false,
+    "date_joined": "2025-11-06T14:26:45.063Z",
+    "email": "isecaicare@thelanguage.co",
+    "first_name": "luis",
+    "last_name": "rojas",
+    "phone": null,
+    "country": null,
+    "city": null,
+    "level": null,
+    "birth_date": null,
+    "cedula": null,
+    "address": null,
+    "emergency_contact": null,
+    "emergency_phone": null,
+    "english_level": "A1",
+    "learning_goals": null,
+    "profile_completed": false,
+    "is_profesor": false,
+    "role": "student",
+    "bloque_asignado": "A1_Tarde",
+    "especializacion": 4,
+    "correo_personal": "isecaicare@gmail.com",
+    "created_at": "2025-11-06T14:26:45.229Z",
+    "updated_at": "2025-11-06T14:27:59.919Z",
+    "is_active": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "api.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$hDoO3Nz1UihDRaaoNIpTxB$EnZ4D5Ix0t2HFnQmGmizM3vtCuSD3+U1xVvGBW6d5wA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "fernandaluis@lalenguacolombia.com",
+    "is_staff": false,
+    "date_joined": "2025-11-07T14:31:35.547Z",
+    "email": "fernandaluis@thelanguage.co",
+    "first_name": "fernanda",
+    "last_name": "luis",
+    "phone": null,
+    "country": null,
+    "city": null,
+    "level": null,
+    "birth_date": null,
+    "cedula": null,
+    "address": null,
+    "emergency_contact": null,
+    "emergency_phone": null,
+    "english_level": "A2",
+    "learning_goals": null,
+    "profile_completed": false,
+    "is_profesor": false,
+    "role": "student",
+    "bloque_asignado": "A1_Noche",
+    "especializacion": 4,
+    "correo_personal": "fernandaluis@lalenguacolombia.com",
+    "created_at": "2025-11-07T14:31:35.719Z",
+    "updated_at": "2025-11-07T14:38:15.396Z",
+    "is_active": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "api.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$RnYLDuKtEFPSE7SHICGKzB$MwvmcvULgtRBk/BRGD0+yFaz+XnVCeB207aMEh0x1Q0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "pepito",
+    "is_staff": false,
+    "date_joined": "2025-11-07T15:08:52.973Z",
+    "email": "pepito@thelanguage.co",
+    "first_name": "fabian",
+    "last_name": "rojas",
+    "phone": null,
+    "country": null,
+    "city": null,
+    "level": null,
+    "birth_date": null,
+    "cedula": null,
+    "address": null,
+    "emergency_contact": null,
+    "emergency_phone": null,
+    "english_level": null,
+    "learning_goals": null,
+    "profile_completed": false,
+    "is_profesor": false,
+    "role": "student",
+    "bloque_asignado": "A2 Noche",
+    "especializacion": 2,
+    "correo_personal": "pepito@gmail.com",
+    "created_at": "2025-11-07T15:08:53.156Z",
+    "updated_at": "2025-11-07T15:08:53.158Z",
+    "is_active": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "api.evaluacion",
+  "pk": 14,
+  "fields": {
+    "titulo": "Master the calma",
+    "descripcion": "",
+    "tipo": "quiz",
+    "estado": "published",
+    "archivo": "evaluaciones/Manual_De_Usuario_The_Tongue.docx",
+    "fecha_limite": null,
+    "profesor": [
+      "profesorprueba@gmail.com"
+    ],
+    "created_at": "2025-10-30T16:56:08.631Z",
+    "updated_at": "2025-11-06T19:08:16.566Z",
+    "estudiantes_asignados": [
+      [
+        "kimberly19323@gmail.com"
+      ]
+    ]
+  }
+},
+{
+  "model": "api.clase",
+  "pk": 35,
+  "fields": {
+    "nombre": "ingles",
+    "profesor": "Carlos Martínez",
+    "fecha": "2025-11-06",
+    "hora": "12:58",
+    "duracion": 60,
+    "tema": "",
+    "descripcion": "",
+    "tipo_clase": "individual",
+    "modalidad": "virtual",
+    "meet_link": "https://meet.google.com/new",
+    "estado": "activa",
+    "created_at": "2025-11-06T16:58:24.836Z",
+    "updated_at": "2025-11-06T17:10:33.615Z",
+    "estudiantes": [
+      [
+        "kimberly19323@gmail.com"
+      ],
+      [
+        "isecaicare@gmail.com"
+      ]
+    ]
+  }
+},
+{
+  "model": "api.clase",
+  "pk": 36,
+  "fields": {
+    "nombre": "Comprensión Auditiva",
+    "profesor": "Profesor Actual",
+    "fecha": "2025-11-06",
+    "hora": "12:15",
+    "duracion": 60,
+    "tema": "Comprensión Auditiva",
+    "descripcion": "wefsds",
+    "tipo_clase": "individual",
+    "modalidad": "virtual",
+    "meet_link": "https://meet.google.com/new",
+    "estado": "programada",
+    "created_at": "2025-11-06T17:12:43.463Z",
+    "updated_at": "2025-11-06T17:12:43.463Z",
+    "estudiantes": [
+      [
+        "kimberly19323@gmail.com"
+      ],
+      [
+        "isecaicare@gmail.com"
+      ]
+    ]
+  }
+},
+{
+  "model": "api.clase",
+  "pk": 37,
+  "fields": {
+    "nombre": "Escritura Académica",
+    "profesor": "Carlos Martínez",
+    "fecha": "2025-11-07",
+    "hora": "12:19",
+    "duracion": 60,
+    "tema": "Escritura Académica",
+    "descripcion": "rgdrgerg",
+    "tipo_clase": "individual",
+    "modalidad": "virtual",
+    "meet_link": "https://meet.google.com/new",
+    "estado": "activa",
+    "created_at": "2025-11-06T17:19:00.684Z",
+    "updated_at": "2025-11-07T14:28:18.364Z",
+    "estudiantes": [
+      [
+        "kimberly19323@gmail.com"
+      ],
+      [
+        "isecaicare@gmail.com"
+      ]
+    ]
+  }
+},
+{
+  "model": "api.clase",
+  "pk": 38,
+  "fields": {
+    "nombre": "Inglés Conversacional",
+    "profesor": "Carlos Martínez",
+    "fecha": "2025-11-07",
+    "hora": "09:30",
+    "duracion": 60,
+    "tema": "Inglés Conversacional",
+    "descripcion": "edsgdradb",
+    "tipo_clase": "individual",
+    "modalidad": "virtual",
+    "meet_link": "https://meet.google.com/new",
+    "estado": "programada",
+    "created_at": "2025-11-07T14:27:41.976Z",
+    "updated_at": "2025-11-07T14:27:41.976Z",
+    "estudiantes": [
+      [
+        "kimberly19323@gmail.com"
+      ],
+      [
+        "isecaicare@gmail.com"
+      ]
+    ]
+  }
+},
+{
+  "model": "api.clase",
+  "pk": 39,
+  "fields": {
+    "nombre": "verbo to by",
+    "profesor": "Carlos Martínez",
+    "fecha": "2025-11-07",
+    "hora": "09:39",
+    "duracion": 60,
+    "tema": "",
+    "descripcion": "",
+    "tipo_clase": "individual",
+    "modalidad": "virtual",
+    "meet_link": "https://meet.google.com/new",
+    "estado": "programada",
+    "created_at": "2025-11-07T14:36:45.448Z",
+    "updated_at": "2025-11-07T14:36:45.448Z",
+    "estudiantes": [
+      [
+        "kimberly19323@gmail.com"
+      ],
+      [
+        "isecaicare@gmail.com"
+      ],
+      [
+        "fernandaluis@lalenguacolombia.com"
+      ]
+    ]
+  }
+},
+{
+  "model": "api.mediaitem",
+  "pk": 1,
+  "fields": {
+    "type": "video",
+    "title": "Clase de Pronunciación - Sonidos Vocálicos",
+    "description": "En esta clase trabajamos los sonidos vocálicos más difíciles para hispanohablantes. Aprende a diferenciar entre /i/ e /ɪ/ con ejercicios prácticos.",
+    "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "file": "",
+    "thumbnail": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop",
+    "author": "Prof. María González",
+    "category": "Videos",
+    "created_at": "2025-09-08T15:55:17.775Z",
+    "updated_at": "2025-09-08T15:55:17.776Z",
+    "is_active": true
+  }
+},
+{
+  "model": "api.mediaitem",
+  "pk": 2,
+  "fields": {
+    "type": "image",
+    "title": "Infografía: Tiempos Verbales",
+    "description": "Guía visual completa de todos los tiempos verbales en inglés con ejemplos y usos específicos. Perfecta para estudiar y repasar.",
+    "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=400&fit=crop",
+    "file": "",
+    "thumbnail": null,
+    "author": "Prof. John Smith",
+    "category": "Infografías",
+    "created_at": "2025-09-08T15:55:17.810Z",
+    "updated_at": "2025-09-08T15:55:17.810Z",
+    "is_active": true
+  }
+},
+{
+  "model": "api.mediaitem",
+  "pk": 3,
+  "fields": {
+    "type": "video",
+    "title": "Conversación Real - En el Aeropuerto",
+    "description": "Simulación de conversaciones típicas en el aeropuerto. Vocabulario esencial y frases útiles para viajeros.",
+    "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "file": "",
+    "thumbnail": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=250&fit=crop",
+    "author": "Prof. Sarah Johnson",
+    "category": "Videos",
+    "created_at": "2025-09-08T15:55:17.856Z",
+    "updated_at": "2025-09-08T15:55:17.856Z",
+    "is_active": true
+  }
+},
+{
+  "model": "api.mediaitem",
+  "pk": 4,
+  "fields": {
+    "type": "image",
+    "title": "Phrasal Verbs Más Comunes",
+    "description": "Colección visual de los phrasal verbs más utilizados en inglés cotidiano con ejemplos contextualizados.",
+    "url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
+    "file": "",
+    "thumbnail": null,
+    "author": "Prof. Michael Brown",
+    "category": "Infografías",
+    "created_at": "2025-09-08T15:55:17.898Z",
+    "updated_at": "2025-09-08T15:55:17.898Z",
+    "is_active": true
+  }
+},
+{
+  "model": "api.mediaitem",
+  "pk": 5,
+  "fields": {
+    "type": "image",
+    "title": "DFHTRH",
+    "description": "dfhfsjfstj",
+    "url": null,
+    "file": "gallery/Captura_de_pantalla_2025-08-13_a_la_s__2.31.31_p.m.-removebg-preview.png",
+    "thumbnail": null,
+    "author": "Admin",
+    "category": "Fotos",
+    "created_at": "2025-09-08T20:58:03.265Z",
+    "updated_at": "2025-09-08T20:58:03.265Z",
+    "is_active": false
+  }
+},
+{
+  "model": "api.mediaitem",
+  "pk": 6,
+  "fields": {
+    "type": "image",
+    "title": "esdgdjtfjadjartjr",
+    "description": "adtjfsyjfyjfm",
+    "url": null,
+    "file": "gallery/Captura_de_pantalla_2025-08-13_a_la_s__2.31.31_p.m.-removebg-preview_Q3n9oFA.png",
+    "thumbnail": null,
+    "author": "Admin",
+    "category": "Fotos",
+    "created_at": "2025-09-08T21:03:31.347Z",
+    "updated_at": "2025-09-08T21:03:31.347Z",
+    "is_active": false
+  }
+},
+{
+  "model": "api.mediaitem",
+  "pk": 7,
+  "fields": {
+    "type": "image",
+    "title": "shadjf",
+    "description": "rtfjrsfyjstyk",
+    "url": null,
+    "file": "gallery/Captura_de_pantalla_2025-08-13_a_la_s__3.51.37_p.m.-removebg-preview.png",
+    "thumbnail": null,
+    "author": "Admin",
+    "category": "Fotos",
+    "created_at": "2025-09-08T21:16:42.955Z",
+    "updated_at": "2025-09-08T21:16:42.956Z",
+    "is_active": true
+  }
+},
+{
+  "model": "api.mediaitem",
+  "pk": 8,
+  "fields": {
+    "type": "image",
+    "title": "hlabd",
+    "description": "jejei",
+    "url": null,
+    "file": "gallery/file",
+    "thumbnail": null,
+    "author": "Arabia",
+    "category": "Fotos",
+    "created_at": "2025-10-28T17:07:31.148Z",
+    "updated_at": "2025-10-28T17:07:31.148Z",
+    "is_active": false
+  }
+},
+{
+  "model": "api.mediaitem",
+  "pk": 9,
+  "fields": {
+    "type": "image",
+    "title": "srgsa",
+    "description": "dsad",
+    "url": null,
+    "file": "gallery/ANTOJO_1.jpg",
+    "thumbnail": null,
+    "author": "fernanda",
+    "category": "Videos",
+    "created_at": "2025-11-07T14:40:40.133Z",
+    "updated_at": "2025-11-07T14:40:40.133Z",
+    "is_active": true
+  }
+},
+{
+  "model": "api.club",
+  "pk": 4,
+  "fields": {
+    "name": "sdgdfgdg",
+    "description": "zdf hdf",
+    "profesor": [
+      "profesorprueba@gmail.com"
+    ],
+    "created_at": "2025-10-30T16:56:33.748Z",
+    "updated_at": "2025-10-30T16:56:33.748Z",
+    "students": [
+      [
+        "kimberly19323@gmail.com"
+      ],
+      [
+        "isecaicare@gmail.com"
+      ],
+      [
+        "fernandaluis@lalenguacolombia.com"
+      ]
+    ]
+  }
+},
+{
+  "model": "api.clubmaterial",
+  "pk": 4,
+  "fields": {
+    "club": 4,
+    "week": "23-09",
+    "title": "safs",
+    "description": "sdf",
+    "resource_type": "file",
+    "url": null,
+    "file": "clubs/Manual_Usuario_Masa_Madre.docx",
+    "created_by": [
+      "profesorprueba@gmail.com"
+    ],
+    "created_at": "2025-10-30T17:00:11.503Z",
+    "updated_at": "2025-10-30T17:00:11.503Z",
+    "is_active": true
+  }
+},
+{
+  "model": "api.clubmaterial",
+  "pk": 5,
+  "fields": {
+    "club": 4,
+    "week": "07 al 13",
+    "title": "charlas",
+    "description": "sgsg",
+    "resource_type": "file",
+    "url": null,
+    "file": "clubs/ANTOJO_1.jpg",
+    "created_by": [
+      "profesorprueba@gmail.com"
+    ],
+    "created_at": "2025-11-07T15:02:38.107Z",
+    "updated_at": "2025-11-07T15:02:38.107Z",
+    "is_active": true
+  }
+},
+{
+  "model": "api.especializacion",
+  "pk": 1,
+  "fields": {
+    "nombre": "Inglés para Finanzas",
+    "descripcion": "Especialización en terminología financiera, presentaciones de negocios y comunicación corporativa.",
+    "duracion": "8 semanas",
+    "precio": "299.00",
+    "activa": true,
+    "created_at": "2025-09-09T21:17:49.633Z",
+    "updated_at": "2025-09-09T21:17:49.634Z"
+  }
+},
+{
+  "model": "api.especializacion",
+  "pk": 2,
+  "fields": {
+    "nombre": "Inglés para Negocios",
+    "descripcion": "Enfoque en reuniones de trabajo, negociaciones y correspondencia empresarial.",
+    "duracion": "10 semanas",
+    "precio": "349.00",
+    "activa": true,
+    "created_at": "2025-09-09T21:17:49.636Z",
+    "updated_at": "2025-09-09T21:17:49.636Z"
+  }
+},
+{
+  "model": "api.especializacion",
+  "pk": 3,
+  "fields": {
+    "nombre": "Inglés para Viajes",
+    "descripcion": "Vocabulario y frases esenciales para turismo, hoteles, aeropuertos y situaciones de viaje.",
+    "duracion": "6 semanas",
+    "precio": "199.00",
+    "activa": true,
+    "created_at": "2025-09-09T21:17:49.637Z",
+    "updated_at": "2025-09-09T21:17:49.637Z"
+  }
+},
+{
+  "model": "api.especializacion",
+  "pk": 4,
+  "fields": {
+    "nombre": "Inglés Técnico",
+    "descripcion": "Terminología especializada para profesionales de IT, ingeniería y ciencias.",
+    "duracion": "12 semanas",
+    "precio": "399.00",
+    "activa": true,
+    "created_at": "2025-09-09T21:17:49.638Z",
+    "updated_at": "2025-09-09T21:28:19.909Z"
+  }
+},
+{
+  "model": "api.especializacion",
+  "pk": 5,
+  "fields": {
+    "nombre": "Inglés para Call Center",
+    "descripcion": "Comunicación telefónica efectiva, atención al cliente y resolución de problemas en inglés.",
+    "duracion": "6 semanas",
+    "precio": "249.00",
+    "activa": true,
+    "created_at": "2025-09-09T21:17:49.638Z",
+    "updated_at": "2025-09-09T21:28:22.919Z"
+  }
+},
+{
+  "model": "api.notificacion",
+  "pk": 59,
+  "fields": {
+    "profesor": [
+      "profesorprueba@gmail.com"
+    ],
+    "tipo": "clase_hoy",
+    "titulo": "Clase hoy: ",
+    "mensaje": "Tienes una clase programada hoy a las 12:58. Tema: . 2 estudiante(s) asignados.",
+    "prioridad": "alta",
+    "leida": true,
+    "clase_relacionada": 35,
+    "evaluacion_relacionada": null,
+    "estudiante_relacionado": null,
+    "created_at": "2025-11-06T16:58:38.188Z",
+    "updated_at": "2025-11-06T17:08:03.342Z"
+  }
+},
+{
+  "model": "api.notificacion",
+  "pk": 60,
+  "fields": {
+    "profesor": [
+      "profesorprueba@gmail.com"
+    ],
+    "tipo": "clase_proxima",
+    "titulo": "Clase mañana: Escritura Académica",
+    "mensaje": "Tienes una clase programada mañana a las 12:19. Prepara el material para: Escritura Académica",
+    "prioridad": "media",
+    "leida": true,
+    "clase_relacionada": 37,
+    "evaluacion_relacionada": null,
+    "estudiante_relacionado": null,
+    "created_at": "2025-11-06T19:06:15.631Z",
+    "updated_at": "2025-11-06T19:12:18.559Z"
+  }
+},
+{
+  "model": "api.notificacion",
+  "pk": 61,
+  "fields": {
+    "profesor": [
+      "profesorprueba@gmail.com"
+    ],
+    "tipo": "clase_hoy",
+    "titulo": "Clase hoy: Escritura Académica",
+    "mensaje": "Tienes una clase programada hoy a las 12:19. Tema: Escritura Académica. 2 estudiante(s) asignados.",
+    "prioridad": "alta",
+    "leida": false,
+    "clase_relacionada": 37,
+    "evaluacion_relacionada": null,
+    "estudiante_relacionado": null,
+    "created_at": "2025-11-07T13:45:52.002Z",
+    "updated_at": "2025-11-07T13:45:52.002Z"
+  }
+},
+{
+  "model": "api.notificacion",
+  "pk": 62,
+  "fields": {
+    "profesor": [
+      "profesorprueba@gmail.com"
+    ],
+    "tipo": "clase_hoy",
+    "titulo": "Clase hoy: Inglés Conversacional",
+    "mensaje": "Tienes una clase programada hoy a las 09:30. Tema: Inglés Conversacional. 2 estudiante(s) asignados.",
+    "prioridad": "alta",
+    "leida": true,
+    "clase_relacionada": 38,
+    "evaluacion_relacionada": null,
+    "estudiante_relacionado": null,
+    "created_at": "2025-11-07T14:28:16.742Z",
+    "updated_at": "2025-11-07T14:37:09.418Z"
+  }
+},
+{
+  "model": "api.notificacion",
+  "pk": 63,
+  "fields": {
+    "profesor": [
+      "profesorprueba@gmail.com"
+    ],
+    "tipo": "clase_hoy",
+    "titulo": "Clase hoy: ",
+    "mensaje": "Tienes una clase programada hoy a las 09:39. Tema: . 3 estudiante(s) asignados.",
+    "prioridad": "alta",
+    "leida": true,
+    "clase_relacionada": 39,
+    "evaluacion_relacionada": null,
+    "estudiante_relacionado": null,
+    "created_at": "2025-11-07T14:36:57.453Z",
+    "updated_at": "2025-11-07T14:37:05.950Z"
+  }
+},
+{
+  "model": "api.missionexternallink",
+  "pk": 9,
+  "fields": {
+    "mission_key": "vocabulario",
+    "platform": "gimkit",
+    "url": "https://www.gimkit.com/join?gc=131802",
+    "start_at": null,
+    "expires_at": null,
+    "is_active": true,
+    "notes": null,
+    "audience_type": "student",
+    "audience_value": "",
+    "user": [
+      "kimberly19323@gmail.com"
+    ],
+    "created_at": "2025-11-04T17:39:26.582Z",
+    "updated_at": "2025-11-04T17:39:26.582Z"
+  }
+},
+{
+  "model": "api.missionexternallink",
+  "pk": 11,
+  "fields": {
+    "mission_key": "nacionalidades",
+    "platform": "gimkit",
+    "url": "https://www.gimkit.com/join?gc=852357",
+    "start_at": null,
+    "expires_at": null,
+    "is_active": true,
+    "notes": null,
+    "audience_type": "student",
+    "audience_value": "",
+    "user": [
+      "isecaicare@gmail.com"
+    ],
+    "created_at": "2025-11-07T14:54:03.490Z",
+    "updated_at": "2025-11-07T14:54:03.490Z"
+  }
+},
+{
+  "model": "api.missionexternallink",
+  "pk": 12,
+  "fields": {
+    "mission_key": "verbos",
+    "platform": "gimkit",
+    "url": "https://www.gimkit.com/join?gc=852357",
+    "start_at": null,
+    "expires_at": null,
+    "is_active": true,
+    "notes": null,
+    "audience_type": "student",
+    "audience_value": "",
+    "user": [
+      "isecaicare@gmail.com"
+    ],
+    "created_at": "2025-11-07T14:55:43.516Z",
+    "updated_at": "2025-11-07T14:55:43.516Z"
+  }
+},
+{
+  "model": "api.plan",
+  "pk": 4,
+  "fields": {
+    "nombre": "Plan Básico",
+    "tipo": "basico",
+    "descripcion": "Perfecto para comenzar tu aprendizaje de inglés desde cero",
+    "precio_base": "180000.00",
+    "duracion_meses": 1,
+    "caracteristicas": [
+      "Acceso a 20 clases básicas",
+      "Material de estudio digital",
+      "Evaluaciones semanales",
+      "Soporte por chat",
+      "Certificado de participación"
+    ],
+    "activo": true,
+    "color_tema": "#3b82f6",
+    "created_at": "2025-09-15T21:17:01.113Z",
+    "updated_at": "2025-09-15T21:23:19.464Z"
+  }
+},
+{
+  "model": "api.plan",
+  "pk": 5,
+  "fields": {
+    "nombre": "Plan Intermedio",
+    "tipo": "basico",
+    "descripcion": "Ideal para estudiantes con conocimientos básicos que quieren avanzar",
+    "precio_base": "280000.00",
+    "duracion_meses": 1,
+    "caracteristicas": [
+      "Acceso a 35 clases (básicas + intermedias)",
+      "Material digital y físico",
+      "Evaluaciones personalizadas",
+      "Soporte prioritario",
+      "Sesiones de conversación grupales",
+      "Acceso a biblioteca digital"
+    ],
+    "activo": true,
+    "color_tema": "#10b981",
+    "created_at": "2025-09-15T21:17:01.115Z",
+    "updated_at": "2025-09-15T21:17:01.115Z"
+  }
+},
+{
+  "model": "api.plan",
+  "pk": 6,
+  "fields": {
+    "nombre": "Plan Premium",
+    "tipo": "premium",
+    "descripcion": "La experiencia completa con tutorías personalizadas y acceso total",
+    "precio_base": "450000.00",
+    "duracion_meses": 1,
+    "caracteristicas": [
+      "Acceso ilimitado a todas las clases",
+      "Material premium completo",
+      "Tutorías individuales (2 por mes)",
+      "Soporte 24/7",
+      "Sesiones de conversación privadas",
+      "Preparación para exámenes internacionales",
+      "Certificado oficial",
+      "Acceso a eventos exclusivos"
+    ],
+    "activo": true,
+    "color_tema": "#f59e0b",
+    "created_at": "2025-09-15T21:17:01.116Z",
+    "updated_at": "2025-09-15T21:17:01.116Z"
+  }
+},
+{
+  "model": "api.plan",
+  "pk": 7,
+  "fields": {
+    "nombre": "Plan Empresarial",
+    "tipo": "premium",
+    "descripcion": "Solución completa para capacitación empresarial en inglés",
+    "precio_base": "800000.00",
+    "duracion_meses": 1,
+    "caracteristicas": [
+      "Acceso para hasta 10 empleados",
+      "Contenido especializado en inglés de negocios",
+      "Reportes de progreso empresarial",
+      "Tutor dedicado para la empresa",
+      "Horarios flexibles",
+      "Certificaciones corporativas",
+      "Soporte técnico prioritario"
+    ],
+    "activo": true,
+    "color_tema": "#8b5cf6",
+    "created_at": "2025-09-15T21:17:01.117Z",
+    "updated_at": "2025-09-15T21:17:01.117Z"
+  }
+}
+]

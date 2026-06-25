@@ -1,0 +1,254 @@
+.clases-view {
+  padding: 32px;
+}
+
+.clases-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.header-info h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.header-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.filter-select {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.clases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.clase-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.clase-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.clase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.clase-fecha {
+  display: flex;
+  flex-direction: column;
+}
+
+.fecha-principal {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  text-transform: capitalize;
+}
+
+.hora {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.estado-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.clase-content {
+  padding: 20px;
+}
+
+.tema {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.estudiantes-section {
+  margin-bottom: 16px;
+}
+
+.estudiantes-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.estudiantes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.estudiante-tag {
+  padding: 4px 8px;
+  background: #e0e7ff;
+  color: #3730a3;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.notas-section {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.notas-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0369a1;
+  margin-bottom: 4px;
+}
+
+.notas-text {
+  margin: 0;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.clase-actions {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn.edit {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.action-btn.edit:hover {
+  background: #e5e7eb;
+}
+
+.action-btn.start {
+  background: #10b981;
+  color: white;
+}
+
+.action-btn.start:hover {
+  background: #059669;
+}
+
+.action-btn.view {
+  background: #3b82f6;
+  color: white;
+}
+
+.action-btn.view:hover {
+  background: #2563eb;
+}
+
+.action-btn.finish {
+  background: #f59e0b;
+  color: white;
+}
+
+.action-btn.finish:hover {
+  background: #d97706;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #374151;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .clases-view {
+    padding: 20px;
+  }
+  
+  .clases-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .clases-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .clase-header {
+    padding: 16px;
+  }
+  
+  .clase-content {
+    padding: 16px;
+  }
+  
+  .clase-actions {
+    padding: 12px 16px;
+    flex-direction: column;
+  }
+}

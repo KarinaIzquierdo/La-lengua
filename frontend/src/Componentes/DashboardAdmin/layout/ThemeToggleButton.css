@@ -1,0 +1,20 @@
+.theme-toggle-button {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all var(--transition-fast);
+
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--bg-card);
+  border-color: var(--text-accent);
+}

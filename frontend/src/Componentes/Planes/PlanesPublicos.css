@@ -1,0 +1,219 @@
+.planes-publicos-container {
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+.planes-main {
+  padding-top: 90px; /* espacio por el header fijo */
+}
+
+.planes-hero {
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.planes-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.planes-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+}
+
+.planes-loading,
+.planes-error {
+  max-width: 960px;
+  margin: 2rem auto 3rem auto;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  text-align: center;
+  color: #4b5563;
+}
+
+.planes-grid-section {
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1.5rem 2rem;
+}
+
+.planes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+.plan-card-public {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.plan-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.plan-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(129, 140, 248, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.plan-card-info h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem 0;
+  color: #111827;
+}
+
+.plan-card-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.plan-card-badge.basico {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+}
+
+.plan-card-badge.especializado {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+}
+
+.plan-card-badge.premium {
+  background: rgba(249, 115, 22, 0.1);
+  color: #c2410c;
+}
+
+.plan-card-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.15rem;
+}
+
+.plan-card-price .currency {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.plan-card-price .amount {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.plan-card-price .period {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.plan-card-description {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.plan-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.plan-card-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.check-icon {
+  color: #10b981;
+  font-size: 0.9rem;
+}
+
+.plan-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.plan-duration {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.plan-contact-button {
+  border: none;
+  outline: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(129, 140, 248, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.plan-contact-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(129, 140, 248, 0.5);
+}
+
+@media (max-width: 640px) {
+  .planes-hero {
+    padding-top: 1.5rem;
+  }
+
+  .planes-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .plan-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .plan-contact-button {
+    width: 100%;
+    text-align: center;
+  }
+}

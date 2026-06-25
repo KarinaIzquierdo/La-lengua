@@ -1,0 +1,540 @@
+/* ===== REGISTRO DE VENTAS STYLES ===== */
+
+.registro-ventas-container {
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  min-height: 100vh;
+}
+
+.ventas-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ventas-header h2 {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.ventas-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== ESTADÍSTICAS RÁPIDAS ===== */
+
+.estadisticas-rapidas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card.ingresos .stat-icon {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.stat-card.ventas .stat-icon {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.stat-card.pendientes .stat-icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.stat-card.conversion .stat-icon {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.stat-info h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
+  line-height: 1;
+}
+
+.stat-info p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ===== FILTROS ===== */
+
+.filtros-section {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.filtro-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filtro-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.filtro-group select,
+.filtro-group input {
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.filtro-group select:focus,
+.filtro-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.filtro-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-nueva-venta,
+.btn-exportar {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-nueva-venta {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.btn-nueva-venta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-exportar {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.btn-exportar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* ===== TABLA DE VENTAS ===== */
+
+.ventas-table-section {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.ventas-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.ventas-table thead {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: white;
+}
+
+.ventas-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ventas-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+}
+
+.venta-row {
+  transition: all 0.3s ease;
+}
+
+.venta-row:hover {
+  background: #f8fafc;
+}
+
+.venta-row.pagado {
+  border-left: 4px solid #10b981;
+}
+
+.venta-row.pendiente {
+  border-left: 4px solid #f59e0b;
+}
+
+.venta-row.cancelado {
+  border-left: 4px solid #ef4444;
+}
+
+.venta-row.reembolsado {
+  border-left: 4px solid #8b5cf6;
+}
+
+/* ===== CELDAS ESPECÍFICAS ===== */
+
+.venta-id {
+  font-weight: 700;
+  color: #3b82f6;
+  font-size: 0.9rem;
+}
+
+.cliente-info {
+  min-width: 180px;
+}
+
+.cliente-nombre {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.cliente-email {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.plan-info {
+  min-width: 150px;
+}
+
+.plan-nombre {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.plan-tipo {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plan-tipo.basico {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.plan-tipo.especializado {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.plan-tipo.premium {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.especializacion {
+  min-width: 140px;
+}
+
+.esp-badge {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.no-esp {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.precio-total {
+  text-align: right;
+  min-width: 100px;
+}
+
+.precio {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.dias-restantes {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.metodo-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.metodo-badge.efectivo {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.metodo-badge.tarjeta {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.metodo-badge.transferencia {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.metodo-badge.paypal {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.estado-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.fecha-venta {
+  min-width: 140px;
+  font-size: 0.85rem;
+}
+
+.fecha-pago {
+  color: #64748b;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.vendedor {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* ===== ACCIONES ===== */
+
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-ver,
+.btn-editar,
+.btn-marcar-pagado {
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.btn-ver:hover {
+  background: #3b82f6;
+  color: white;
+  transform: scale(1.1);
+}
+
+.btn-editar:hover {
+  background: #f59e0b;
+  color: white;
+  transform: scale(1.1);
+}
+
+.btn-marcar-pagado:hover {
+  background: #10b981;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* ===== ESTADO VACÍO ===== */
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #64748b;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.empty-state p {
+  font-size: 1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1200px) {
+  .ventas-table {
+    font-size: 0.8rem;
+  }
+  
+  .ventas-table th,
+  .ventas-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .registro-ventas-container {
+    padding: 1rem;
+  }
+  
+  .estadisticas-rapidas {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+  }
+  
+  .filtros-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filtro-actions {
+    justify-content: center;
+  }
+  
+  .table-container {
+    overflow-x: scroll;
+  }
+  
+  .ventas-table {
+    min-width: 800px;
+  }
+}
+
+/* ===== PAGE HEADER WITH PDF BUTTON ===== */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.page-header h2 {
+  font-size: 2rem;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.page-header p {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.btn-generar-pdf {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 1.75rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-generar-pdf:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-generar-pdf:active {
+  transform: translateY(0);
+}

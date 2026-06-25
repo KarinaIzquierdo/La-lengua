@@ -1,0 +1,786 @@
+/* Layout del Profesor - Sidebar fijo */
+.profesor-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.profesor-content {
+  flex-grow: 1;
+  background: #f8fafc;
+  overflow-y: auto;
+  padding: 2rem;
+  margin-left: 250px;
+}
+
+.dashboard-home {
+  margin-bottom: 2rem;
+}
+
+.dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header del profesor */
+.profesor-header {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.welcome-section p {
+  margin: 0 0 24px 0;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* Tarjetas de estadísticas */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  font-size: 32px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Contenido principal */
+.main-content {
+  background: white;
+  border-radius: 16px;
+  min-height: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* MisClubs grid layout */
+.clubs-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+}
+
+/* User picker */
+.user-picker {
+  background: #ffffff;
+  border: 1px solid #eef2f7;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.user-picker-filters {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.user-picker-filters select,
+.user-picker-filters input {
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0 10px;
+  outline: none;
+}
+
+.user-picker-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  max-height: 240px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.user-option {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.user-option .user-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.user-option .user-meta {
+  grid-column: 2 / span 1;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.user-option.selected {
+  border-color: #7c3aed;
+  background: #f5f3ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profesor-layout {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .profesor-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  
+  .dashboard-content {
+    padding: 16px;
+  }
+  
+  .profesor-header {
+    padding: 24px;
+  }
+  
+  .welcome-section h1 {
+    font-size: 24px;
+  }
+  
+  .stats-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .stat-card {
+    padding: 20px;
+  }
+  
+  .stat-icon {
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .stat-number {
+    font-size: 20px;
+  }
+
+  .clubs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .user-picker-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .user-picker-list {
+    grid-template-columns: 1fr;
+    max-height: 300px;
+  }
+}
+
+/* Modal Overlay - Fix z-index */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999 !important;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 10000 !important;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px 32px;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Botón Agregar Club */
+.btn-add-class {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+
+.btn-add-class:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Clubs List Container */
+.clubs-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.clubs-list-section {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 24px 0;
+  padding-bottom: 16px;
+  border-bottom: 3px solid #667eea;
+}
+
+/* Clubs Cards Grid */
+.clubs-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.club-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.club-card:hover {
+  border-color: #667eea;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+}
+
+.club-card.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+}
+
+.club-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.club-card-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.club-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.club-description {
+  color: #6b7280;
+  font-size: 0.9375rem;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+.club-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.club-profesor {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Club Details Section */
+.club-details-section {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.club-details-section .users-table-container {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.users-table-container h3 {
+  margin: 0 0 24px 0;
+  color: #1f2937;
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.users-table-container h3::before {
+  content: "👥";
+  font-size: 1.5rem;
+}
+
+/* User Picker - Filtros mejorados */
+.user-picker {
+  margin-bottom: 32px;
+}
+
+.user-picker-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.user-picker-filters {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  flex: 1;
+}
+
+.user-picker-filters select,
+.user-picker-filters input {
+  padding: 14px 18px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background: white;
+}
+
+.user-picker-filters select:focus,
+.user-picker-filters input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Botón Agregar Estudiantes */
+.btn-add-students {
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.btn-add-students:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.user-picker-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.user-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-option:hover {
+  border-color: #667eea;
+  background: #f0f4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-option.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.user-option input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Tabla responsive */
+.users-table {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.users-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.users-table th,
+.users-table td {
+  padding: 16px;
+  text-align: left;
+}
+
+.users-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.users-table th:first-child {
+  border-radius: 12px 0 0 0;
+}
+
+.users-table th:last-child {
+  border-radius: 0 12px 0 0;
+}
+
+.users-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.users-table tbody tr:hover {
+  background: #f9fafb;
+  transform: scale(1.01);
+}
+
+.users-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.users-table td {
+  color: #374151;
+  font-size: 0.9375rem;
+}
+
+/* Badges de Club */
+.club-badge-assigned {
+  display: inline-block;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.club-badge-unassigned {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #e5e7eb;
+  color: #6b7280;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Botones de Acción */
+.action-button {
+  padding: 8px 16px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.deactivate-button {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.deactivate-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.activate-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.activate-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pagination-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.pagination-btn:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+  background: transparent;
+  color: #374151;
+  font-weight: 700;
+  border: 2px solid #e5e7eb;
+}
+
+.pagination-info {
+  font-size: 0.9375rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .clubs-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .users-table table {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profesor-content {
+    padding: 1rem;
+    margin-left: 0;
+  }
+  
+  .clubs-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .clubs-list-section,
+  .club-details-section {
+    padding: 20px;
+  }
+  
+  .users-table-container {
+    padding: 16px;
+    overflow-x: auto;
+  }
+  
+  .users-table table {
+    min-width: 400px;
+    font-size: 0.875rem;
+  }
+  
+  .users-table th,
+  .users-table td {
+    padding: 8px;
+  }
+  
+  .user-picker-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .user-picker-filters {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .user-picker-filters select,
+  .user-picker-filters input {
+    width: 100%;
+  }
+  
+  .btn-add-students {
+    width: 100%;
+  }
+  
+  .pagination {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .users-table-container h3 {
+    font-size: 1.25rem;
+  }
+  
+  .users-table table {
+    font-size: 0.75rem;
+  }
+  
+  .users-table th,
+  .users-table td {
+    padding: 6px;
+  }
+}

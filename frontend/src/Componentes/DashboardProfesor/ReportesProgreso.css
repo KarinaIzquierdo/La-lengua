@@ -1,0 +1,489 @@
+.reportes-progreso {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.reportes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.reportes-header h2 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.reportes-controles {
+  display: flex;
+  gap: 1rem;
+}
+
+.filtro-select,
+.orden-select {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filtro-select:hover,
+.orden-select:hover {
+  border-color: var(--primary-blue);
+}
+
+/* Resumen general */
+.resumen-general {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tabla de Reportes */
+.reportes-table-container {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nivel-badge-table {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827; /* texto oscuro para mejor lectura */
+  background: #e5e7eb; /* fondo gris claro para que destaque el nivel */
+}
+
+.nivel-badge-table.básico {
+  background: #3b82f6;
+}
+
+.nivel-badge-table.intermedio {
+  background: #f59e0b;
+}
+
+.nivel-badge-table.avanzado {
+  background: #10b981;
+}
+
+/* Barra de progreso en tabla */
+.progreso-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progreso-barra-table {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progreso-relleno-table {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.progreso-porcentaje {
+  font-weight: 600;
+  color: #667eea;
+  min-width: 45px;
+  text-align: right;
+}
+
+.calificacion-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Acciones en tabla */
+.acciones-table {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-accion-table {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  background: #f3f4f6;
+}
+
+.btn-accion-table:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-accion-table.btn-ver:hover {
+  background: #dbeafe;
+}
+
+.btn-accion-table.btn-generar:hover {
+  background: #d1fae5;
+}
+
+.resumen-card {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resumen-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.resumen-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.resumen-info h3 {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.resumen-valor {
+  display: block;
+  color: var(--primary-blue);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Lista de estudiantes */
+.estudiantes-lista-container {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.estudiantes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 100%;
+}
+
+.estudiante-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.estudiante-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.estudiante-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.estudiante-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.estudiante-info h3 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.nivel-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nivel-badge.básico {
+  background: rgba(34, 197, 94, 0.2);
+  color: #16a34a;
+}
+
+.nivel-badge.intermedio {
+  background: rgba(59, 130, 246, 0.2);
+  color: #2563eb;
+}
+
+.nivel-badge.avanzado {
+  background: rgba(168, 85, 247, 0.2);
+  color: #7c3aed;
+}
+
+.estudiante-info-simple {
+  display: flex;
+  align-items: center;
+}
+
+.ultima-clase-header {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Barra de progreso */
+.progreso-barra {
+  margin-bottom: 1.5rem;
+}
+
+.progreso-fondo {
+  width: 100%;
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progreso-relleno {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-blue), #60a5fa);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progreso-texto {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+
+/* Footer del estudiante */
+.estudiante-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.acciones {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-accion {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--primary-blue);
+  background: transparent;
+  color: var(--primary-blue);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-accion:hover {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.btn-ver-detalles {
+  background: var(--primary-blue) !important;
+  color: white !important;
+  border-color: var(--primary-blue) !important;
+}
+
+.btn-ver-detalles:hover {
+  background: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+  transform: translateY(-1px);
+}
+
+.btn-generar {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  color: white !important;
+}
+
+.btn-generar:hover {
+  background: #059669 !important;
+  border-color: #059669 !important;
+}
+
+/* Detalles expandidos */
+.detalles-expandidos {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.detalles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.detalle-seccion h5 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Timeline de progreso */
+.progreso-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 60px 1fr 50px;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.timeline-fecha {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.timeline-barra {
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.timeline-progreso {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-blue), #60a5fa);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.timeline-porcentaje {
+  font-size: 0.8rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Objetivos lista */
+.objetivos-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.objetivos-lista li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.objetivos-lista li:before {
+  content: "•";
+  color: var(--primary-blue);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.objetivos-lista li:last-child {
+  border-bottom: none;
+}
+
+/* Notas del profesor */
+.notas-profesor {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: 6px;
+  border-left: 3px solid #10b981;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reportes-progreso {
+    padding: 1rem;
+  }
+  
+  .reportes-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .reportes-controles {
+    flex-direction: column;
+  }
+  
+  .resumen-general {
+    grid-template-columns: 1fr;
+  }
+  
+  .estudiante-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  
+  
+  .estudiante-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .acciones {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

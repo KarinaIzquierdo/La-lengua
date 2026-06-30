@@ -1,4 +1,8 @@
-const API_BASE_URL = 'https://lalenguacolombia.co/api/index.php';
+import { API_BASE_URL as CONFIG_API_BASE_URL } from '../config/api';
+
+const API_BASE_URL = import.meta.env.MODE === 'development'
+  ? CONFIG_API_BASE_URL
+  : 'https://lalenguacolombia.co/api/index.php';
 
 export interface Club {
   id: number;

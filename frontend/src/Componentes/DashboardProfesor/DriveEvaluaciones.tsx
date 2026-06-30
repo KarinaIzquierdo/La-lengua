@@ -22,6 +22,7 @@ export default function DriveEvaluaciones() {
   const [editingEvaluacion, setEditingEvaluacion] = useState<Evaluacion | null>(null);
   const [assigningEvaluacion, setAssigningEvaluacion] = useState<Evaluacion | null>(null);
   const [selectedStudents, setSelectedStudents] = useState<string[]>([]);
+  const [enlaceError, setEnlaceError] = useState('');
   const [formData, setFormData] = useState({
     titulo: '',
     nivel: '',
@@ -108,6 +109,15 @@ export default function DriveEvaluaciones() {
         return;
       }
 
+      // Validar que el enlace sea una URL válida si se proporcionó
+      if (formData.enlace) {
+        const esUrlValida = /^https?:\/\/.+/i.test(formData.enlace.trim());
+        if (!esUrlValida) {
+          alert('El enlace debe ser una URL válida que empiece con http:// o https://\n\nEjemplo: https://forms.gle/... o https://docs.google.com/...');
+          return;
+        }
+      }
+
       if (editingEvaluacion) {
         // Actualizar evaluación existente en el backend
         const result = await evaluacionProfesorService.actualizarEvaluacion(editingEvaluacion.id, formData);
@@ -161,6 +171,7 @@ export default function DriveEvaluaciones() {
       
       // Resetear formulario solo si todo salió bien
       setFormData({ titulo: '', nivel: '', unidad: '', clase: '', enlace: '', tipo: 'quiz', archivo: null });
+      setEnlaceError('');
       setShowModal(false);
       setEditingEvaluacion(null);
       
@@ -172,6 +183,7 @@ export default function DriveEvaluaciones() {
 
   const handleEdit = (evaluacion: Evaluacion) => {
     setEditingEvaluacion(evaluacion);
+    setEnlaceError('');
     setFormData({
       titulo: evaluacion.titulo,
       nivel: evaluacion.nivel,
@@ -510,20 +522,34 @@ export default function DriveEvaluaciones() {
             </div>
 
             <div className="evaluacion-enlace">
-              {evaluacion.enlace ? (
-                <a 
-                  href={evaluacion.enlace} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="enlace-evaluacion"
-                >
-                  🔗 Abrir Evaluación
-                </a>
-              ) : (
-                <span className="enlace-evaluacion sin-enlace">
-                  Sin enlace asignado (solo archivo)
-                </span>
-              )}
+              {(() => {
+                const enlace = evaluacion.enlace || '';
+                const esUrlValida = /^https?:\/\/.+/i.test(enlace);
+                if (esUrlValida) {
+                  return (
+                    <a 
+                      href={enlace} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="enlace-evaluacion"
+                    >
+                      🔗 Abrir Evaluación
+                    </a>
+                  );
+                } else if (enlace) {
+                  return (
+                    <span className="enlace-evaluacion sin-enlace">
+                      ⚠️ Enlace inválido: "{enlace}" no es una URL válida
+                    </span>
+                  );
+                } else {
+                  return (
+                    <span className="enlace-evaluacion sin-enlace">
+                      Sin enlace asignado (solo archivo)
+                    </span>
+                  );
+                }
+              })()}
             </div>
 
             <div className="evaluacion-actions">
@@ -571,7 +597,7 @@ export default function DriveEvaluaciones() {
           <div className="modal-content">
             <div className="modal-header">
               <h2>{editingEvaluacion ? 'Editar Evaluación' : 'Nueva Evaluación'}</h2>
-              <button className="btn-close" onClick={() => setShowModal(false)}>×</button>
+              <button className="btn-close" onClick={() => { setEnlaceError(''); setShowModal(false); }}>×</button>
             </div>
 
             <form onSubmit={handleSubmit} className="evaluacion-form">
@@ -655,15 +681,62 @@ export default function DriveEvaluaciones() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="enlace">Enlace de la Evaluación</label>
-                <input
-                  type="text"
-                  id="enlace"
-                  value={formData.enlace}
-                  onChange={(e) => setFormData(prev => ({ ...prev, enlace: e.target.value }))}
-                  placeholder="https://... (Gimkit, Kahoot, Quizizz, Google Forms, etc.)"
-                />
-                <small>Pega aquí el enlace de cualquier plataforma de evaluación (Gimkit, Kahoot, Quizizz, Google Forms, etc.). Este campo es opcional si adjuntas un archivo.</small>
+                <label htmlFor="enlace">
+                  🔗 Enlace de la Evaluación <span style={{ color: '#ef4444' }}>*</span>
+                </label>
+                <div className="enlace-input-wrapper" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                  <input
+                    type="text"
+                    id="enlace"
+                    value={formData.enlace}
+                    onChange={(e) => {
+                      const valor = e.target.value;
+                      setFormData(prev => ({ ...prev, enlace: valor }));
+                      if (valor && !/^https?:\/\/.+/i.test(valor.trim())) {
+                        setEnlaceError('El enlace debe empezar con http:// o https://');
+                      } else {
+                        setEnlaceError('');
+                      }
+                    }}
+                    placeholder="https://forms.gle/... o https://docs.google.com/..."
+                    style={{
+                      borderColor: enlaceError ? '#ef4444' : formData.enlace && /^https?:\/\/.+/i.test(formData.enlace.trim()) ? '#22c55e' : undefined,
+                      flex: 1
+                    }}
+                  />
+                  {formData.enlace && /^https?:\/\/.+/i.test(formData.enlace.trim()) && (
+                    <a
+                      href={formData.enlace.trim()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-open-link"
+                      style={{
+                        padding: '0.6rem 1rem',
+                        background: '#667eea',
+                        color: 'white',
+                        borderRadius: '8px',
+                        textDecoration: 'none',
+                        fontSize: '0.85rem',
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      Abrir
+                    </a>
+                  )}
+                </div>
+                {enlaceError && (
+                  <small style={{ color: '#ef4444', display: 'block', marginTop: '0.3rem' }}>
+                    ⚠️ {enlaceError}
+                  </small>
+                )}
+                {!enlaceError && formData.enlace && /^https?:\/\/.+/i.test(formData.enlace.trim()) && (
+                  <small style={{ color: '#22c55e', display: 'block', marginTop: '0.3rem' }}>
+                    ✅ URL válida
+                  </small>
+                )}
+                <small style={{ display: 'block', marginTop: '0.3rem', color: '#6b7280' }}>
+                  Pega aquí el enlace completo de cualquier plataforma (debe empezar con http:// o https://)
+                </small>
               </div>
 
               {!editingEvaluacion && (
@@ -683,7 +756,7 @@ export default function DriveEvaluaciones() {
               )}
 
               <div className="form-actions">
-                <button type="button" className="btn-cancel" onClick={() => setShowModal(false)}>
+                <button type="button" className="btn-cancel" onClick={() => { setEnlaceError(''); setShowModal(false); }}>
                   Cancelar
                 </button>
                 <button type="submit" className="btn-save">

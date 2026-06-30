@@ -26,19 +26,21 @@ export default function DashboardProfesor({ onLogout }: DashboardProfesorProps =
   const [profesorData, setProfessorData] = useState({
     nombre: 'Cargando...',
     especialidad: 'Inglés Conversacional',
-    clasesTotales: 24,
-    estudiantesActivos: 18,
-    evaluacionesPendientes: 5,
+    clasesTotales: 0,
+    estudiantesActivos: 0,
+    evaluacionesPendientes: 0,
     initials: 'CG'
   });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadProfessorData = async () => {
+      let profesorId: number | undefined;
       try {
         // 1) Intentar leer directamente del usuario guardado en el login (localStorage)
         const savedUser = authService.getUser?.();
         if (savedUser) {
+          profesorId = savedUser.id;
           const firstName = savedUser.first_name || '';
           const lastName = savedUser.last_name || '';
           const username = savedUser.username || '';
@@ -60,6 +62,7 @@ export default function DashboardProfesor({ onLogout }: DashboardProfesorProps =
           // 2) Fallback: intentar obtener el perfil desde el backend si el endpoint existe
           const response = await userService.getCurrentUser();
           if (response.success && response.user) {
+            profesorId = response.user.id;
             setProfessorData(prev => ({
               ...prev,
               nombre: `Prof. ${response.user.full_name}`,
@@ -69,7 +72,8 @@ export default function DashboardProfesor({ onLogout }: DashboardProfesorProps =
         }
 
         try {
-          const clasesProfesor: any[] = await ClaseService.getClasesPorProfesor(0);
+          const profesorIdNum = typeof profesorId === 'number' && profesorId > 0 ? profesorId : 0;
+          const clasesProfesor: any[] = await ClaseService.getClasesPorProfesor(profesorIdNum);
           const clasesArray = Array.isArray(clasesProfesor) ? clasesProfesor : [];
 
           const estudiantesIds = new Set<number>();
